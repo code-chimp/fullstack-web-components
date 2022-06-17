@@ -64,7 +64,7 @@ describe('TextInputComponent', () => {
       .clear()
       .click()
       .type('PASSWORD');
-    cy.get('#root').get('.submit').should('be.visible').click();
+    cy.get('#root').get('.submit').click();
 
     cy.get('#root')
       .get('[id="password"]')
@@ -81,7 +81,7 @@ describe('TextInputComponent', () => {
       .clear()
       .click()
       .type('12345678');
-    cy.get('#root').get('.submit').should('be.visible').click();
+    cy.get('#root').get('.submit').click();
 
     cy.get('#root')
       .get('[id="password"]')
@@ -98,7 +98,7 @@ describe('TextInputComponent', () => {
       .clear()
       .click()
       .type('#@#@#@#@');
-    cy.get('#root').get('.submit').should('be.visible').click();
+    cy.get('#root').get('.submit').click();
 
     cy.get('#root')
       .get('[id="password"]')
