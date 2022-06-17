@@ -10,6 +10,7 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="TypeScript File" />
         <option value="JavaScript File" />
       </list>
     </option>
@@ -46,6 +47,7 @@
     "nodejs_package_manager_path": "yarn",
     "prettierjs.PrettierConfiguration.Package": "/home/tgoshinski/work/lab/components/fullstack-web-components/node_modules/prettier",
     "settings.editor.selected.configurable": "project.propVCSSupport.CommitDialog",
+    "ts.external.directory.path": "/home/tgoshinski/work/lab/components/fullstack-web-components/node_modules/typescript/lib",
     "vue.rearranger.settings.migration": "true"
   },
   "keyToStringList": {
@@ -70,7 +72,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1655472314232</updated>
-      <workItem from="1655472320023" duration="2533000" />
+      <workItem from="1655472320023" duration="18093000" />
     </task>
     <task id="LOCAL-00001" summary=":sparkles: personal changes to base project">
       <created>1655474735612</created>
@@ -86,7 +88,14 @@
       <option name="project" value="LOCAL" />
       <updated>1655474788415</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary=":sparkles: Card component">
+      <created>1655475770528</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1655475770528</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -106,7 +115,8 @@
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <MESSAGE value=":sparkles: personal changes to base project" />
-    <option name="LAST_COMMIT_MESSAGE" value=":sparkles: personal changes to base project" />
+    <MESSAGE value=":sparkles: Card component" />
+    <option name="LAST_COMMIT_MESSAGE" value=":sparkles: Card component" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
