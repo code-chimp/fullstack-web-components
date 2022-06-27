@@ -1,4 +1,5 @@
 import { TextInputComponent } from './TextInput';
+import { ButtonComponent } from '../button/Button';
 import { html } from 'lit-html';
 
 export default {
@@ -140,7 +141,7 @@ const FormTemplate = ({ headline, onSubmit, onValidate, onFormData }) => {
           minlength="8"
           pattern="^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$ %^&*-]).{8,}$"
         ></in-textinput>
-        <input class="submit" type="submit" value="Submit" />
+        <button type="submit" is="in-button" class="primary submit">Submit</button>
       </fieldset>
     </form>`;
 };
