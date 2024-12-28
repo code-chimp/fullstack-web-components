@@ -7,6 +7,33 @@
   "author": "Stephen Belovarich <steveblue@gmail.com>",
   "license": "MIT",
   "customElements": "custom-elements.json",
+  "volta": {
+    "node": "16.20.2",
+    "yarn": "1.22.22"
+  },
+  "scripts": {
+    "analyze": "custom-elements-manifest analyze --dev --exclude \"[./**/*.stories.js, ./cypress/**/*.*, dist]\"",
+    "clean": "lerna run clean --parallel",
+    "build": "lerna run build",
+    "start": "yarn storybook",
+    "start:app": "lerna exec --scope @in/client -- yarn build && concurrently yarn:start:client yarn:start:server",
+    "start:client": "lerna exec --scope @in/client -- yarn start",
+    "start:server": "lerna exec --scope @in/server -- yarn dev",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook",
+    "predeploy": "yarn build-storybook",
+    "deploy-storybook": "storybook-to-ghpages",
+    "test": "jest",
+    "test:e2e": "cypress run",
+    "test:e2e:open": "cypress open",
+    "test:snapshot": "npm test web-components-storyshots.test.js",
+    "test:e2e:ci": "start-server-and-test storybook http://localhost:6006 test:e2e",
+    "test:snapshot:ci": "start-server-and-test storybook http://localhost:6006 test:snapshot"
+  },
+  "private": true,
+  "workspaces": [
+    "packages/**/*"
+  ],
   "devDependencies": {
     "@babel/core": "7.14.0",
     "@babel/plugin-proposal-decorators": "7.14.5",
@@ -30,6 +57,7 @@
     "@storybook/storybook-deployer": "2.8.10",
     "@storybook/testing-library": "0.0.9",
     "@storybook/web-components": "6.4.19",
+    "@types/node": "16",
     "babel-loader": "8.2.2",
     "babel-plugin-polyfill-corejs2": "0.3.1",
     "babel-plugin-polyfill-regenerator": "0.3.1",
@@ -74,28 +102,5 @@
     "start-server-and-test": "1.12.5",
     "ts-node": "10.1.0",
     "tslib": "2.3.0"
-  },
-  "scripts": {
-    "analyze": "custom-elements-manifest analyze --dev --exclude \"[./**/*.stories.js, ./cypress/**/*.*, dist]\"",
-    "clean": "lerna run clean --parallel",
-    "build": "lerna run build",
-    "start": "yarn storybook",
-    "start:app": "lerna exec --scope @in/client -- yarn build && concurrently yarn:start:client yarn:start:server",
-    "start:client": "lerna exec --scope @in/client -- yarn start",
-    "start:server": "lerna exec --scope @in/server -- yarn dev",
-    "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook",
-    "predeploy": "yarn build-storybook",
-    "deploy-storybook": "storybook-to-ghpages",
-    "test": "jest",
-    "test:e2e": "cypress run",
-    "test:e2e:open": "cypress open",
-    "test:snapshot": "npm test web-components-storyshots.test.js",
-    "test:e2e:ci": "start-server-and-test storybook http://localhost:6006 test:e2e",
-    "test:snapshot:ci": "start-server-and-test storybook http://localhost:6006 test:snapshot"
-  },
-  "private": true,
-  "workspaces": [
-    "packages/**/*"
-  ]
+  }
 }
